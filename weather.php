@@ -9,7 +9,7 @@
 		$file_headers = @get_headers("https://www.weather-forecast.com/locations/".$city."/forecasts/latest");
 		if(!$file_headers || $file_headers[0] == 'HTTP/1.1 404 Not Found') 
 		{
-			$error = "This city could not be found";
+			$error = "This city is unavailable";
 		}
 		else 
 		{
@@ -21,7 +21,7 @@
 				if(sizeof($secondArray)> 1)
 						$weather = $secondArray[0];
 					else
-						$error = "This City could not be found";
+						$error = "This City has some issue";
 			}
 			else
 				$error = "This City could not be found";
